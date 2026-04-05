@@ -142,7 +142,7 @@
 
 # 
 
-# \- Optimal clustering achieved with \*\*K-Means (k = 2)\*\*
+# \- Optimal clustering achieved with K-Means (k = 2)
 
 # \- PCA improved clustering performance:
 
@@ -154,11 +154,11 @@
 
 # 
 
-# \- One cluster represents \*\*high-income, high-spending customers\*\*
+# \- One cluster represents high-income, high-spending customers
 
-# \- The other cluster represents \*\*lower-spending customers\*\*
+# \- The other cluster represents lower-spending customers
 
-# \- Spending variables (e.g., wine, meat, premium products) were the strongest differentiators
+# \- Spending variables were the strongest differentiators
 
 # \- Demographic variables had less influence compared to behavioral features
 
@@ -172,25 +172,113 @@
 
 # 
 
-# ```text
+# &#x20;   Customer-Segmentation/
 
-# Customer-Segmentation/
+# &#x20;   ├── data/
 
-# │
+# &#x20;   │   └── README.md
 
-# ├── data/
+# &#x20;   ├── notebooks/
 
-# │   └── README.md
+# &#x20;   │   └── customer\_segmentation\_kmeans\_dbscan\_pca.ipynb
 
-# ├── notebooks/
+# &#x20;   ├── src/
 
-# │   └── customer\_segmentation\_kmeans\_dbscan\_pca.ipynb
+# &#x20;   │   └── utils.py
 
-# ├── src/
+# &#x20;   ├── requirements.txt
 
-# │   └── utils.py
+# &#x20;   └── .gitignore
 
-# ├── requirements.txt
+# 
 
-# └── .gitignore
+# \---
+
+# 
+
+# \## How to Run
+
+# 
+
+# 1\. Clone the repository:
+
+# &#x20;  git clone https://github.com/Jorge-Barajas-Github/Customer\_Segmentation\_Using\_Unsupervised\_Learning.git
+
+# 
+
+# 2\. Install dependencies:
+
+# &#x20;  pip install -r requirements.txt
+
+# 
+
+# 3\. Download the dataset (see data/README.md) and place it in:
+
+# &#x20;  data/raw/
+
+# 
+
+# 4\. Run the notebook:
+
+# &#x20;  jupyter notebook
+
+# 
+
+# \---
+
+# 
+
+# \## Limitations
+
+# 
+
+# \- Clustering results depend on feature selection and scaling
+
+# \- DBSCAN performance is sensitive to parameter tuning
+
+# \- Only two clusters identified, which may oversimplify customer behavior
+
+# \- Limited temporal analysis of customer activity
+
+# 
+
+# \---
+
+# 
+
+# \## Future Improvements
+
+# 
+
+# \- Explore additional clustering methods (e.g., hierarchical clustering)
+
+# \- Tune DBSCAN parameters more extensively
+
+# \- Incorporate time-based features for longitudinal analysis
+
+# \- Use clustering outputs for downstream supervised models
+
+# 
+
+# \---
+
+# 
+
+# \## References
+
+# 
+
+# Fernandes, S. (2022). Customer Personality Analysis \[Data set]. Kaggle.  
+
+# https://www.kaggle.com/datasets/imakash3011/customer-personality-analysis
+
+# 
+
+# Scikit-learn developers. (2024). Scikit-learn: Machine Learning in Python.  
+
+# https://scikit-learn.org/stable/index.html
+
+# 
+
+# \---
 
