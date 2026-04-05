@@ -1,114 +1,196 @@
-# CNN Pneumonia Detector
+# \# Customer Segmentation with K-Means, DBSCAN, and PCA
 
-This project develops and evaluates Convolutional Neural Network (CNN) models to detect pneumonia from chest X-ray images. The goal is to explore deep learning techniques for medical image classification and assess model performance using appropriate evaluation metrics.
+# 
 
-## Problem Overview
+# This project applies unsupervised machine learning techniques to segment customers based on purchasing behavior and demographic data. The goal is to identify meaningful customer groups that can be used to drive targeted marketing strategies and improve business decision-making.
 
-Pneumonia is a serious lung infection that can be life-threatening if not detected early. Diagnosis typically requires expert analysis of chest X-rays, which can be time-consuming.
+# 
 
-This project builds deep learning models to assist in detecting pneumonia from X-ray images, demonstrating how machine learning can support medical decision-making.
+# \---
 
-## Dataset
+# 
 
-* Source: Kaggle – Chest X-Ray Images (Pneumonia)
-* Total Images: 5,863
-* Classes:
+# \## Problem Overview
 
-  * NORMAL
-  * PNEUMONIA
+# 
 
-The dataset is already split into:
+# Customer segmentation is a key component of marketing analytics. By grouping customers with similar behaviors and characteristics, businesses can tailor campaigns, optimize product placement, and improve customer engagement.
 
-* Training set
-* Validation set
-* Test set
+# 
 
-Note: The validation set is very small (16 images), which may lead to unstable validation performance.
+# This project uses clustering algorithms to uncover natural groupings within customer data, with a focus on interpretability and actionable insights.
 
-## Approach
+# 
 
-The workflow is implemented in a single notebook and includes:
+# \---
 
-1. Data Preparation
-* Image loading and resizing (128x128)
-* Normalization (pixel scaling)
-2. Exploratory Data Analysis (EDA)
-* Visualization of sample images
-* Inspection of image dimensions and values
-3. Model Development
-Three CNN models were built and compared:
-* Model 1 (Baseline)
+# 
 
-  * Single convolutional layer
-  * Simple architecture for benchmarking
-* Model 2
+# \## Dataset
 
-  * Additional convolutional layer
-  * Modified filter sizes
-* Model 3 (Final Model)
+# 
 
-  * Two convolutional layers
-  * Dropout layers (25%) to reduce overfitting
-4. Evaluation
-Models were evaluated using:
-* Accuracy
-* Precision
-* Recall
-* F1-score
-* Confusion matrix
+# \- Source: Kaggle (Customer Personality Analysis Dataset)
 
-## Results
+# \- Records: \~2,200 customers
 
-The final model achieved:
+# \- Features: Demographics, purchasing behavior, and campaign responses
 
-* Test Accuracy: \~78.7%
-* Pneumonia Recall: 0.99
-* Pneumonia Precision: 0.75
+# 
 
-Key insight:
+# The dataset includes variables such as income, spending across product categories, purchase frequency, and marketing campaign engagement.
 
-* The model performs very well at detecting pneumonia cases (high recall)
-* Performance on normal cases is weaker, indicating class imbalance or model bias
+# 
 
-## Repository Structure
+# Note: The dataset is not included in this repository due to file size.
 
-CNN-Pneumonia-Detector/
-│
-├── data/
-│   └── README.md
-├── notebooks/
-│   └── Pneumonia Detection.ipynb
-├── src/
-│   └── utils.py
-├── requirements.txt
-└── .gitignore
+# 
 
-## How to Run
+# \---
 
-1. Clone the repository:
-git clone https://github.com/Jorge-Barajas-Github/CNN-Pneumonia-Detector.git
-2. Install dependencies:
-pip install -r requirements.txt
-3. Download dataset (see data/README.md) and place it in:
-data/raw/chest\_xray/
-4. Run the notebook:
-jupyter notebook
+# 
 
-## Limitations
+# \## Approach
 
-* Very small validation set (16 images)
-* No data augmentation applied
-* Models are relatively simple CNN architectures
+# 
 
-## Future Improvements
+# The full workflow is implemented in a single notebook and includes:
 
-* Increase validation set size or use cross-validation
-* Apply data augmentation
-* Perform more extensive hyperparameter tuning
+# 
 
-## References
+# \### 1. Data Preparation
 
-* Kaggle Dataset: Chest X-Ray Images (Pneumonia)
-* TensorFlow Documentation
-* Scikit-learn Documentation
+# 
+
+# \- Data cleaning and removal of missing values
+
+# \- Feature engineering (e.g., customer age, total spending)
+
+# \- One-hot encoding of categorical variables
+
+# \- Feature scaling using StandardScaler
+
+# 
+
+# \### 2. Exploratory Data Analysis
+
+# 
+
+# \- Distribution analysis of key variables
+
+# \- Correlation analysis to understand feature relationships
+
+# \- Initial insights into customer behavior patterns
+
+# 
+
+# \### 3. Model Development
+
+# 
+
+# Two clustering algorithms were applied and compared:
+
+# 
+
+# \- K-Means Clustering
+
+# \- DBSCAN
+
+# 
+
+# Model selection was based on:
+
+# 
+
+# \- Silhouette score
+
+# \- Visual inspection using PCA-reduced data
+
+# 
+
+# \### 4. Dimensionality Reduction
+
+# 
+
+# \- Principal Component Analysis (PCA) was applied to:
+
+# &#x20; - Reduce dimensionality
+
+# &#x20; - Improve clustering performance
+
+# &#x20; - Enable visualization of clusters
+
+# 
+
+# \### 5. Evaluation
+
+# 
+
+# \- Elbow method (inertia)
+
+# \- Silhouette score
+
+# \- Cluster visualization using PCA
+
+# 
+
+# \---
+
+# 
+
+# \## Results
+
+# 
+
+# \- Optimal clustering achieved with \*\*K-Means (k = 2)\*\*
+
+# \- PCA improved clustering performance:
+
+# &#x20; - Silhouette score increased from \~0.197 to \~0.213
+
+# 
+
+# \### Key Insights
+
+# 
+
+# \- One cluster represents \*\*high-income, high-spending customers\*\*
+
+# \- The other cluster represents \*\*lower-spending customers\*\*
+
+# \- Spending variables (e.g., wine, meat, premium products) were the strongest differentiators
+
+# \- Demographic variables had less influence compared to behavioral features
+
+# 
+
+# \---
+
+# 
+
+# \## Repository Structure
+
+# 
+
+# ```text
+
+# Customer-Segmentation/
+
+# │
+
+# ├── data/
+
+# │   └── README.md
+
+# ├── notebooks/
+
+# │   └── customer\_segmentation\_kmeans\_dbscan\_pca.ipynb
+
+# ├── src/
+
+# │   └── utils.py
+
+# ├── requirements.txt
+
+# └── .gitignore
 
